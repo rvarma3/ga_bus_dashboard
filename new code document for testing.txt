@@ -1,8 +1,0 @@
-this is a sample of the code
-
-select * from this_table
-
-
-hi there to the blow
-
-this is a new line from rvarma
