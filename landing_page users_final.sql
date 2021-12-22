@@ -19,7 +19,7 @@ from
 "EDWH_PROD"."WS_MDP_PROD"."EXT_GA_RAW_DATA" as a2
 where 
 to_date(date_part) between '2020-10-01' and '2020-10-31' and
-lower(regexp_replace(a1.hits,'[":]', '')) like ('%pagepath/ destinations offers / barclays partnership%') 
+lower(regexp_replace(a2.hits,'[":]', '')) like ('%pagepath/ destinations offers / barclays partnership%') 
 
 union all
 
@@ -30,7 +30,7 @@ from
 "EDWH_PROD"."WS_MDP_PROD"."EXT_GA_RAW_DATA" as a3
 where 
 to_date(date_part) between '2020-11-01' and '2020-11-30' and
-lower(regexp_replace(a1.hits,'[":]', '')) like ('%pagepath/ destinations offers / barclays partnership%') 
+lower(regexp_replace(a3.hits,'[":]', '')) like ('%pagepath/ destinations offers / barclays partnership%') 
 
 union all
 
@@ -40,7 +40,7 @@ from
 "EDWH_PROD"."WS_MDP_PROD"."EXT_GA_RAW_DATA" as a4
 where
 to_date(date_part) between '2020-12-01' and '2020-12-31' and
-lower(regexp_replace(a1.hits,'[":]', '')) like ('%pagepath/ destinations offers / barclays partnership%') 
+lower(regexp_replace(a4.hits,'[":]', '')) like ('%pagepath/ destinations offers / barclays partnership%') 
 
 union all
 
@@ -50,7 +50,7 @@ from
 "EDWH_PROD"."WS_MDP_PROD"."EXT_GA_RAW_DATA" as a5
 where
 to_date(date_part) between '2021-01-01' and '2021-01-31' and
-lower(regexp_replace(a1.hits,'[":]', '')) like ('%pagepath/ destinations offers / barclays partnership%') 
+lower(regexp_replace(a5.hits,'[":]', '')) like ('%pagepath/ destinations offers / barclays partnership%') 
 
 union all
 
@@ -60,7 +60,7 @@ from
 "EDWH_PROD"."WS_MDP_PROD"."EXT_GA_RAW_DATA" as a6
 where
 to_date(date_part) between '2021-02-01' and '2021-02-28' and
-lower(regexp_replace(a1.hits,'[":]', '')) like ('%pagepath/ destinations offers / barclays partnership%') 
+lower(regexp_replace(a6.hits,'[":]', '')) like ('%pagepath/ destinations offers / barclays partnership%') 
 
 union all
 
@@ -71,7 +71,7 @@ from
 "EDWH_PROD"."WS_MDP_PROD"."EXT_GA_RAW_DATA" as a7
 where
 to_date(date_part) between '2021-03-01' and '2021-03-31' and
-lower(regexp_replace(a2.hits,'[":]', '')) like ('%pagepath/ destinations offers / barclays partnership%') 
+lower(regexp_replace(a7.hits,'[":]', '')) like ('%pagepath/ destinations offers / barclays partnership%') 
 
 union all
 
@@ -82,7 +82,7 @@ from
 "EDWH_PROD"."WS_MDP_PROD"."EXT_GA_RAW_DATA" as a8
 where
 to_date(date_part) between '2021-04-01' and '2021-04-30' and
-lower(regexp_replace(a2.hits,'[":]', '')) like ('%pagepath/ destinations offers / barclays partnership%') 
+lower(regexp_replace(a8.hits,'[":]', '')) like ('%pagepath/ destinations offers / barclays partnership%') 
 
 union all
 
@@ -93,7 +93,7 @@ from
 "EDWH_PROD"."WS_MDP_PROD"."EXT_GA_RAW_DATA" as a9
 where
 to_date(date_part) between '2021-05-01' and '2021-05-31' and
-lower(regexp_replace(a2.hits,'[":]', '')) like ('%pagepath/ destinations offers / barclays partnership%') 
+lower(regexp_replace(a9.hits,'[":]', '')) like ('%pagepath/ destinations offers / barclays partnership%') 
 
 union all
 
@@ -104,7 +104,7 @@ from
 "EDWH_PROD"."WS_MDP_PROD"."EXT_GA_RAW_DATA" as a10
 where
 to_date(date_part) between '2021-06-01' and '2021-06-30' and
-lower(regexp_replace(a3.hits,'[":]', '')) like ('%pagepath/ destinations offers / barclays partnership%') 
+lower(regexp_replace(a10.hits,'[":]', '')) like ('%pagepath/ destinations offers / barclays partnership%') 
 
 union all
 
@@ -114,7 +114,7 @@ from
 "EDWH_PROD"."WS_MDP_PROD"."EXT_GA_RAW_DATA" as a11
 where
 to_date(date_part) between '2021-07-01' and '2021-07-31' and
-lower(regexp_replace(a3.hits,'[":]', '')) like ('%pagepath/ destinations offers / barclays partnership%') 
+lower(regexp_replace(a11.hits,'[":]', '')) like ('%pagepath/ destinations offers / barclays partnership%') 
 
 union all
 
@@ -124,7 +124,7 @@ from
 "EDWH_PROD"."WS_MDP_PROD"."EXT_GA_RAW_DATA" as a12
 where
 to_date(date_part) between '2021-08-01' and '2021-08-31' and
-lower(regexp_replace(a3.hits,'[":]', '')) like ('%pagepath/ destinations offers / barclays partnership%') 
+lower(regexp_replace(a12.hits,'[":]', '')) like ('%pagepath/ destinations offers / barclays partnership%') 
 
 union all
 
@@ -134,7 +134,7 @@ from
 "EDWH_PROD"."WS_MDP_PROD"."EXT_GA_RAW_DATA" as a13
 where
 to_date(date_part) between '2021-09-01' and '2021-09-30' and
-lower(regexp_replace(a3.hits,'[":]', '')) like ('%pagepath/ destinations offers / barclays partnership%') 
+lower(regexp_replace(a13.hits,'[":]', '')) like ('%pagepath/ destinations offers / barclays partnership%') 
 
 union all
 
@@ -144,7 +144,7 @@ from
 "EDWH_PROD"."WS_MDP_PROD"."EXT_GA_RAW_DATA" as a14
 where
 to_date(date_part) between '2021-10-01' and '2021-10-31' and
-lower(regexp_replace(a3.hits,'[":]', '')) like ('%pagepath/ destinations offers / barclays partnership%') 
+lower(regexp_replace(a14.hits,'[":]', '')) like ('%pagepath/ destinations offers / barclays partnership%') 
 
 union all
 
@@ -154,7 +154,7 @@ from
 "EDWH_PROD"."WS_MDP_PROD"."EXT_GA_RAW_DATA" as a15
 where
 to_date(date_part) between '2021-11-01' and '2021-11-30' and
-lower(regexp_replace(a3.hits,'[":]', '')) like ('%pagepath/ destinations offers / barclays partnership%') 
+lower(regexp_replace(a15.hits,'[":]', '')) like ('%pagepath/ destinations offers / barclays partnership%') 
 
 union all
 
@@ -164,7 +164,7 @@ from
 "EDWH_PROD"."WS_MDP_PROD"."EXT_GA_RAW_DATA" as a16
 where
 to_date(date_part) between '2021-12-01' and '2021-12-31' and
-lower(regexp_replace(a4.hits,'[":]', '')) like ('%pagepath/ destinations offers / barclays partnership%') 
+lower(regexp_replace(a16.hits,'[":]', '')) like ('%pagepath/ destinations offers / barclays partnership%') 
 
 
 -----------------------------------------------------------------------------------
