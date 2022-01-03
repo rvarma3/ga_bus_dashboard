@@ -59,7 +59,7 @@ from
  
  
 where
-FULLVISITORID in ('6897951228314575162', '415906969382633187') and
+
 sess_cd.value:index::string = '53' and
 sess_cd_1.value:index::string = '54' and
 sess_cd_2.value:index::string = '33'
@@ -77,7 +77,7 @@ from
 ,lateral flatten( input => parse_json(a2.hits) ) as v1
 ,lateral flatten( input => v1.value:customDimensions ) as v2
 where
-FULLVISITORID in ('6897951228314575162', '415906969382633187') and
+
 v2.value:index::string = '114'
 ) as ga_hit_id on ss1.FULLVISITORID = ga_hit_id.FULLVISITORID and ss1.hit_no = ga_hit_id.hit_no
 
@@ -93,7 +93,6 @@ from
 ,lateral flatten( input => parse_json(a2.hits) ) as v1
 ,lateral flatten( input => v1.value:customDimensions ) as v2
 where
-FULLVISITORID in ('6897951228314575162', '415906969382633187') and
 v2.value:index::string = '109'
 ) as ga_prev_page on ss1.FULLVISITORID = ga_prev_page.FULLVISITORID and ss1.hit_no = ga_prev_page.hit_no
 
@@ -111,19 +110,9 @@ from
 ,lateral flatten( input => parse_json(a2.hits) ) as v1
 ,lateral flatten( input => v1.value:customDimensions ) as v2
 where
-FULLVISITORID in ('6897951228314575162', '415906969382633187') and
 v2.value:index::string = '159'
 ) as ga_query_param on ss1.FULLVISITORID = ga_query_param.FULLVISITORID and ss1.hit_no = ga_query_param.hit_no
 
 
 
-
-
-
-
-
-
-
-
-{"continent":"Americas","country":"United States","metro":"Dallas-Ft. Worth TX","region":"Texas","subContinent":"Northern America"}
 
