@@ -449,7 +449,36 @@ from
 
 
 
+----------------------------------------------------------------------------------
 
+-- procedure to include codes from all lines below
+-- insert incremental rows
+
+insert into "EDWH_PROD"."WS_SKYWARDS_PROD".ruch_barclays_master_table_union
+select
+a16.VALUE,
+a16.DATE_PART,
+a16.VISITORID,
+a16.VISITNUMBER,
+a16.VISITID,
+a16.VISITSTARTTIME,
+a16.TOTALS,
+a16.TRAFFICSOURCE,
+a16.DEVICE,
+a16.GEONETWORK,
+a16.CUSTOMDIMENSIONS,
+a16.HITS,
+a16.FULLVISITORID,
+a16.USERID,
+a16.CLIENTID,
+a16.CHANNELGROUPING,
+a16.SOCIALENGAGEMENTTYPE
+
+from
+"EDWH_PROD"."WS_MDP_PROD"."EXT_GA_RAW_DATA" as a16
+where
+to_date(date_part) between ((select max(date_part) from "EDWH_PROD"."WS_SKYWARDS_PROD".ruch_barclays_master_table_union) +1) and to_date(sysdate()) and
+lower(regexp_replace(a16.hits,'[":]', '')) like ('%pagepath/ destinations offers / barclays partnership%') ;
 
 
 
@@ -486,7 +515,7 @@ regexp_replace( ss1.hit_time                 ,'["]', '')   as hit_time          
 regexp_replace( ss1.bounced                  ,'["]', '')   as bounced              ,
 regexp_replace( ss1.visits                   ,'["]', '')   as visits               ,
 regexp_replace( ss1.visitor_type             ,'["]', '')   as visitor_type         ,
-regexp_replace( ss1.time_on_site             ,'["]', '')   as time_on_site         ,
+cast(ss1.time_on_site *1 as int						   )   as time_on_site         ,
 regexp_replace( ss1.sess_person_id           ,'["]', '')   as sess_person_id       ,
 regexp_replace( ss1.user_person_id           ,'["]', '')   as user_person_id       ,
 regexp_replace( ss1.skywards_tier_ga         ,'["]', '')   as skywards_tier_ga     ,
@@ -500,7 +529,12 @@ regexp_replace( ss1.utm_campaign             ,'["]', '')   as utm_campaign      
 regexp_replace( ss1.utm_ad_content           ,'["]', '')   as utm_ad_content       ,
 regexp_replace( ga_hit_id.cd_GA_Hit_ID       ,'["]', '')   as cd_GA_Hit_ID         ,
 regexp_replace( ga_prev_page.cd_previous_page,'["]', '')   as cd_previous_page     ,
-regexp_replace( ga_query_param.cd_query_param,'["]', '')   as cd_query_param
+regexp_replace( ga_query_param.cd_query_param,'["]', '')   as cd_query_param,
+
+
+case
+when len(CD_QUERY_PARAM) > 19 and CD_QUERY_PARAM like '%referrerid%' then substring(CD_QUERY_PARAM,CHARINDEX('referrerid', CD_QUERY_PARAM)+11 ,  CHARINDEX('&utm_medium', CD_QUERY_PARAM)  -  (CHARINDEX('referrerid', CD_QUERY_PARAM)+11 ) )
+when len(CD_QUERY_PARAM) <= 19 and CD_QUERY_PARAM like '%referrerid%' then substring(CD_QUERY_PARAM,CHARINDEX('referrerid', CD_QUERY_PARAM)+11 ) end as referrerid
 
 from
 	(
